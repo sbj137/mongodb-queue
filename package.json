@@ -1,6 +1,6 @@
 {
   "name": "mongodb-queue",
-  "version": "4.0.0_a",
+  "version": "4.0.1",
   "description": "Fork with optional message payload filter.",
   "main": "mongodb-queue.js",
   "scripts": {
