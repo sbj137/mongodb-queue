@@ -1,7 +1,7 @@
 {
   "name": "mongodb-queue",
-  "version": "4.0.0",
-  "description": "Message queues which uses MongoDB.",
+  "version": "4.0.0_a",
+  "description": "Fork with optional message payload filter.",
   "main": "mongodb-queue.js",
   "scripts": {
     "test": "set -e; for FILE in test/*.js; do echo --- $FILE ---; node $FILE; done"
@@ -12,14 +12,13 @@
     "mongodb": "^3.1.13",
     "tape": "^4.10.1"
   },
-  "homepage": "https://github.com/chilts/mongodb-queue",
+  "homepage": "https://github.com/sbj137/mongodb-queue",
   "repository": {
     "type": "git",
-    "url": "git://github.com/chilts/mongodb-queue.git"
+    "url": "git://github.com/sbj137/mongodb-queue.git"
   },
   "bugs": {
-    "url": "http://github.com/chilts/mongodb-queue/issues",
-    "mail": "andychilton@gmail.com"
+    "url": "http://github.com/sbj137/mongodb-queue/issues",
   },
   "author": {
     "name": "Andrew Chilton",
