@@ -110,6 +110,7 @@ Queue.prototype.get = function(opts, callback) {
         deleted : null,
         visible : { $lte : now() },
     }
+    query = {...query, ...opts.query || {}}
     var sort = {
         _id : 1
     }
