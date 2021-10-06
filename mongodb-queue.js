@@ -63,6 +63,10 @@ Queue.prototype.createIndexes = function(callback) {
     })
 }
 
+/**
+ * Modified add() method which
+ *  - sets an ack id
+ */
 Queue.prototype.add = function(payload, opts, callback) {
     var self = this
     if ( !callback ) {
@@ -88,6 +92,7 @@ Queue.prototype.add = function(payload, opts, callback) {
         msgs.push({
             visible  : visible,
             payload  : payload,
+            ack      : id(),
         })
     }
 
@@ -98,6 +103,11 @@ Queue.prototype.add = function(payload, opts, callback) {
     })
 }
 
+/**
+ * Modified get() method which
+ *  - accepts query parameters for payload filtering and
+ *  - never changes the ack id of queue items
+ */
 Queue.prototype.get = function(opts, callback) {
     var self = this
     if ( !callback ) {
@@ -117,7 +127,6 @@ Queue.prototype.get = function(opts, callback) {
     var update = {
         $inc : { tries : 1 },
         $set : {
-            ack     : id(),
             visible : nowPlusSecs(visibility),
         }
     }
