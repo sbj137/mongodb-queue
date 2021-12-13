@@ -99,7 +99,7 @@ Queue.prototype.add = function(payload, opts, callback) {
     self.col.insertMany(msgs, function(err, results) {
         if (err) return callback(err)
         if (payload instanceof Array) return callback(null, '' + results.insertedIds)
-        callback(null, '' + results.ops[0]._id)
+        callback(null, '' + results.insertedIds["0"])
     })
 }
 
